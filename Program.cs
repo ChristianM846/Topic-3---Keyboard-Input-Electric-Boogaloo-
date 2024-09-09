@@ -106,6 +106,40 @@
             Console.ReadLine();
             Console.WriteLine($"So if the three distances are {distance1} km, {distance2} km, {distance3}km...");
             Console.WriteLine($"The average would be... {Math.Round(averageDistance, 2)} km!");
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadLine();
+            Console.WriteLine();
+
+            //Part 4 - Hypotenuse
+
+            Console.WriteLine("Part 4");
+            Console.WriteLine();
+            Console.WriteLine($"Finally {name}, I want you to give me the lengths of the two legs of a triange (in cm), and I'll give you the hypotenuse ");
+            Console.WriteLine("So, what's the length of the first leg? (Don't include 'cm' in your respone)");
+
+            while (!Double.TryParse(Console.ReadLine().Trim(), out leg1) || leg1 <= 0)
+            {
+                Console.WriteLine("Theat is not a valid response, try again.");
+            }
+
+            Console.WriteLine($"Okay, the first leg is {leg1} cm long. And how long is the second?");
+
+            while (!Double.TryParse(Console.ReadLine().Trim(), out leg2) || leg2 <= 0)
+            {
+                Console.WriteLine("Theat is not a valid response, try again.");
+            }
+
+            hypotenuse = Math.Round(Math.Sqrt((leg1 * leg1) + (leg2 * leg2)), 2);
+
+            Console.WriteLine($"Okay, the second leg is {leg2} cm long. Now let's find the hypotenuse.");
+            Console.WriteLine("Press ENTER to continue");
+            Console.ReadLine();
+            Console.WriteLine($"If leg 1 is {leg1} cm, and leg 2 is {leg2} cm, than the hypotenuse is {hypotenuse} cm long.");
+            Console.WriteLine("Press ENTER to close program");
+            Console.ReadLine();
+            Console.WriteLine($"Goodbye {name}!");
+
+
 
 
 
