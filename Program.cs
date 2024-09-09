@@ -10,10 +10,11 @@
             int currentYear = DateTime.Now.Year;
             int int1, int2, int3;
             double distance1, distance2, distance3;
+            double averageDistance;
             double leg1, leg2;
             double hypotenuse;
 
-            //Part 1
+            //Part 1 - Greetings
 
             Console.WriteLine("Part 1");
             Console.WriteLine();
@@ -34,21 +35,77 @@
                 Console.WriteLine("That is not a valid response, inputted age must be a whole number between 1-150. Please try again:");
             }
 
-            Console.WriteLine($"Okay {name}, if you are {age} year(s) old, the current year is {currentYear}, than you would have been born in {currentYear - age}, give or take a year given what month you were born.");
+            Console.WriteLine($"Okay {name}, if you are {age} year(s) old, and the current year is {currentYear}, than you would have been born in {currentYear - age}, give or take a year given what month you were born.");
             Console.WriteLine();
 
-            // Part 2
+            // Part 2 - Adder
 
             Console.WriteLine("Part 2");
             Console.WriteLine();
-            Console.WriteLine($"Okay {name}, now you're going to give me three integers, and I'll tell you their sum");
+            Console.WriteLine($"Okay {name}, now you're going to give me three whole numbers, and I'll tell you their sum");
+            Console.WriteLine("Give me the first number:");
 
+            while (!Int32.TryParse(Console.ReadLine().Trim(), out int1))
+            {
+                Console.WriteLine("That is not a whole number, try again");
+            }
 
+            Console.WriteLine($"Okay, the first number is {int1}, now give me the second:");
 
+            while (!Int32.TryParse(Console.ReadLine().Trim(), out int2))
+            {
+                Console.WriteLine("That is not a whole number, try again");
+            }
 
+            Console.WriteLine($"Okay, the second number is {int2}, now for the third:");
 
+            if (Int32.TryParse(Console.ReadLine().Trim(), out int3))
+            {
+                Console.WriteLine($"Okay, the third number is {int3}, now to find their sum!");
+            }
+            else
+            {
+                int3 = 69;
+                Console.WriteLine($"Normally I'd make you try again until you inputted a whole number, but instead I'm just gonna make the third number 69. Have fun!");
+            }
 
+            Console.WriteLine($"So, {int1} + {int2} + {int3} = {int1 + int2 + int3}. Cool!");
+            Console.WriteLine("Press ENTER to continue.");
+            Console.ReadLine();
+            Console.WriteLine();
 
+            // Part 3 - Distance
+
+            Console.WriteLine("Part 3");
+            Console.WriteLine();
+            Console.WriteLine("Now let's do something else! Give me three distances in km (can have decimals) and I'll tell you the average.");
+            Console.WriteLine("So, what's the first distance? (Don't include 'km' in your response)");
+
+            while (!Double.TryParse(Console.ReadLine().Trim(), out distance1) || distance1 <= 0)
+            {
+                Console.WriteLine("That is not a valid response, try again");
+            }
+
+            Console.WriteLine($"Okay, the first distance is {distance1} km. Now for the second.");
+
+            while (!Double.TryParse(Console.ReadLine().Trim(), out distance2) || distance2 <= 0)
+            {
+                Console.WriteLine("That is not a valid response, try again");
+            }
+
+            Console.WriteLine($"Okay, the second distance is {distance2} km. Now for the third.");
+
+            while (!Double.TryParse(Console.ReadLine().Trim(), out distance3) || distance3 <= 0)
+            {
+                Console.WriteLine("That is not a valid response, try again");
+            }
+
+            averageDistance = (distance1 + distance2 + distance3)/3;
+
+            Console.WriteLine($"Okay, the third distance is {distance3} km. Now let's find the average. Press ENTER to continue");
+            Console.ReadLine();
+            Console.WriteLine($"So if the three distances are {distance1} km, {distance2} km, {distance3}km...");
+            Console.WriteLine($"The average would be... {Math.Round(averageDistance, 2)} km!");
 
 
 
