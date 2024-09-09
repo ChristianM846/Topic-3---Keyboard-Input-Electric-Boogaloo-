@@ -27,7 +27,7 @@
                 name = Console.ReadLine().Trim();
             }
 
-            Console.WriteLine($"Hello {name}, tell me your age, and I will tell you the year you were born");
+            Console.WriteLine($"Hello {name}, tell me your age, and I will tell you the year you were born.");
             Console.WriteLine("How old are you? Please enter your age:");
 
             while (!Int32.TryParse(Console.ReadLine().Trim(), out age) || age <= 0 || age > 150)
